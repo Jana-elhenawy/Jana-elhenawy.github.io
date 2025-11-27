@@ -1,4 +1,9 @@
-<title>Jana Elhenawy | Portfolio</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jana Elhenawy | Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -157,7 +162,6 @@
             border-radius: 16px;
             margin-bottom: 20px;
             border-left: 4px solid #a855f7;
-            border: 1px solid #2a2a2a;
         }
         .timeline-item h3 {
             color: #a855f7;
@@ -233,10 +237,18 @@
             border: 1px solid #2a2a2a;
             text-align: center;
         }
+        .contact-card h3 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
         .contact-card a {
             color: #a855f7;
             text-decoration: none;
             font-size: 18px;
+            word-break: break-all;
+        }
+        .contact-card a:hover {
+            color: #ec4899;
         }
         footer {
             text-align: center;
@@ -245,8 +257,172 @@
             border-top: 1px solid #222;
         }
         @media (max-width: 768px) {
-            .hero h1 { font-size: 48px; }
-            .skills-grid, .cert-grid, .contact-grid { grid-template-columns: 1fr; }
-            .about-grid { grid-template-columns: 1fr; }
+            .nav {
+                padding: 15px 20px;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hero h1 { 
+                font-size: 48px; 
+            }
+            .hero .subtitle {
+                font-size: 18px;
+            }
+            .skills-grid, .cert-grid, .contact-grid { 
+                grid-template-columns: 1fr; 
+            }
+            .about-grid { 
+                grid-template-columns: 1fr; 
+            }
+            section {
+                padding: 60px 20px;
+            }
         }
     </style>
+</head>
+<body>
+<nav class="nav">
+    <div class="logo">JE</div>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>Jana Elhenawy</h1>
+        <p class="subtitle">Web Developer | Data Science Enthusiast | Competitive Programmer</p>
+        <p class="description">Delivering efficient, scalable solutions that transform your tech vision into reality</p>
+        <a href="#contact" class="btn-primary">Get In Touch</a>
+    </div>
+</div>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="about-grid">
+        <div class="about-card">
+            <h3>🎓 Education</h3>
+            <p><strong>Faculty of Computers and Artificial Intelligence</strong></p>
+            <p>Cairo University</p>
+            <p>2024 - 2028</p>
+        </div>
+        <div class="about-card">
+            <h3>💡 Who I Am</h3>
+            <p>I'm a passionate computer science student specializing in web development and data science. I build clean, modern, and responsive applications with a focus on usability and performance.</p>
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>My Skills & Development</h2>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <div class="skill-icon">⚡</div>
+            <h3>Fast</h3>
+            <p>Optimal performance ensuring quick load times and seamless user experiences</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon">📱</div>
+            <h3>Responsive</h3>
+            <p>Adaptive layouts designed to work seamlessly on any screen size</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon">💡</div>
+            <h3>Intuitive</h3>
+            <p>Creating user-friendly interfaces that prioritize ease of use</p>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon">🚀</div>
+            <h3>Dynamic</h3>
+            <p>Bringing web designs to life with smooth animations and interactions</p>
+        </div>
+    </div>
+</section>
+
+<section id="experience">
+    <h2>Experience</h2>
+    <div class="experience-timeline">
+        <div class="timeline-item">
+            <h3>Data Science Intern</h3>
+            <p class="date">Commercial International Bank (CIB) | July 2025 - August 2025</p>
+            <p>Gained hands-on experience in data analysis, machine learning, and business intelligence, working on real-world banking data projects.</p>
+        </div>
+    </div>
+
+    <h2 style="margin-top: 80px;">Certifications</h2>
+    <div class="cert-grid">
+        <div class="cert-card">
+            <h4>AWS Cloud Practitioner</h4>
+            <p>Amazon Web Services</p>
+        </div>
+        <div class="cert-card">
+            <h4>Data Science Fundamentals</h4>
+            <p>CIB Training Program</p>
+        </div>
+        <div class="cert-card">
+            <h4>Web Development</h4>
+            <p>Responsive Design Certification</p>
+        </div>
+        <div class="cert-card">
+            <h4>Python Programming</h4>
+            <p>Advanced Python Concepts</p>
+        </div>
+        <div class="cert-card">
+            <h4>C++ Programming</h4>
+            <p>Object-Oriented Design</p>
+        </div>
+        <div class="cert-card">
+            <h4>Git & GitHub</h4>
+            <p>Version Control Systems</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="project">
+        <h3>Juceify – Audio Plugin Project</h3>
+        <p>A sophisticated JUCE-based audio application demonstrating advanced C++ programming, UI/UX development, and real-time audio processing capabilities.</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Codedloaded/Juceify" target="_blank">View Repository</a></p>
+        <p><strong>Live Demo:</strong> <a href="https://www.youtube.com/watch?v=itctxfrbRPQ" target="_blank">Watch on YouTube</a></p>
+        <div class="project-tags">
+            <span>C++</span>
+            <span>JUCE</span>
+            <span>Audio Processing</span>
+            <span>UI Design</span>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Let's Connect</h2>
+    <div class="contact-grid">
+        <div class="contact-card">
+            <h3>📧 Email</h3>
+            <a href="mailto:janaelhenawy06@gmail.com">janaelhenawy06@gmail.com</a>
+        </div>
+        <div class="contact-card">
+            <h3>💼 LinkedIn</h3>
+            <a href="https://www.linkedin.com/in/jana-elhenawy-947768327" target="_blank">Connect with me</a>
+        </div>
+        <div class="contact-card">
+            <h3>💻 GitHub</h3>
+            <a href="https://github.com/Jana-elhenawy" target="_blank">github.com/Jana-elhenawy</a>
+        </div>
+        <div class="contact-card">
+            <h3>📄 Resume</h3>
+            <a href="#" download>Download CV</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Jana Elhenawy. Built with passion and code.</p>
+</footer>
+</body>
+</html>
