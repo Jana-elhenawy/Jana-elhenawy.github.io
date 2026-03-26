@@ -5,283 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jana Elhenawy | Portfolio</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #0a0a0a;
             color: #e6e6e6;
             line-height: 1.6;
         }
         .nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
+            position: fixed; top: 0; width: 100%;
+            background: rgba(10,10,10,0.95);
             backdrop-filter: blur(10px);
             padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid #222;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; border-bottom: 1px solid #222;
         }
         .logo {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: 24px; font-weight: bold;
             background: linear-gradient(135deg, #a855f7, #ec4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-        .nav-links a {
-            color: #e6e6e6;
-            text-decoration: none;
-            margin-left: 30px;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: #a855f7;
-        }
+        .nav-links a { color: #e6e6e6; text-decoration: none; margin-left: 30px; font-size: 14px; transition: color 0.3s; }
+        .nav-links a:hover { color: #a855f7; }
+
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
             padding: 100px 50px 50px;
             background: radial-gradient(ellipse at top, #1a0a2e 0%, #0a0a0a 50%);
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
         }
         .hero::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(168, 85, 247, 0.15), transparent);
-            border-radius: 50%;
-            top: -250px;
-            right: -250px;
+            content: ''; position: absolute; width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(168,85,247,0.15), transparent);
+            border-radius: 50%; top: -250px; right: -250px;
         }
-        .hero-content {
-            max-width: 1200px;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
+        .hero-content { max-width: 1200px; text-align: center; position: relative; z-index: 1; }
         .hero h1 {
-            font-size: 72px;
-            margin-bottom: 20px;
+            font-size: 72px; margin-bottom: 20px;
             background: linear-gradient(135deg, #fff, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-        .hero .subtitle {
-            font-size: 24px;
-            color: #999;
-            margin-bottom: 30px;
-        }
-        .hero .description {
-            font-size: 16px;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
+        .hero .subtitle { font-size: 24px; color: #999; margin-bottom: 30px; }
+        .hero .description { font-size: 16px; color: #666; max-width: 600px; margin: 0 auto 40px; }
         .btn-primary {
-            display: inline-block;
-            padding: 15px 40px;
+            display: inline-block; padding: 15px 40px;
             background: linear-gradient(135deg, #a855f7, #ec4899);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
+            color: white; text-decoration: none; border-radius: 50px; font-weight: 600;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(168,85,247,0.4); }
+
+        section { max-width: 1200px; margin: auto; padding: 80px 50px; }
+        h2 { font-size: 48px; margin-bottom: 50px; text-align: center; }
+
+        /* About */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+        .about-card { background: #1a1a1a; padding: 30px; border-radius: 16px; border: 1px solid #2a2a2a; }
+        .about-card h3 { color: #a855f7; margin-bottom: 15px; }
+
+        /* Skills – top combined box */
+        .skills-top-box {
+            background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 16px;
+            padding: 32px; margin-top: 40px;
+            display: grid; grid-template-columns: repeat(4,1fr); gap: 24px;
         }
-        section {
-            max-width: 1200px;
-            margin: auto;
-            padding: 80px 50px;
+        .skill-quality { text-align: center; }
+        .skill-icon { font-size: 36px; margin-bottom: 10px; }
+        .skill-quality h3 { font-size: 15px; margin-bottom: 6px; color: #fff; }
+        .skill-quality p  { font-size: 13px; color: #999; }
+
+        /* Skills – bottom row */
+        .skills-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .lang-box { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 16px; padding: 28px; }
+        .lang-box h3 { color: #a855f7; margin-bottom: 16px; font-size: 17px; }
+        .lang-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        .lang-tag {
+            background: rgba(168,85,247,0.12); border: 1px solid rgba(168,85,247,0.3);
+            color: #d8b4fe; padding: 7px 16px; border-radius: 999px;
+            font-size: 13px; font-weight: 500; cursor: default;
+            transition: background .25s, transform .25s;
         }
-        h2 {
-            font-size: 48px;
-            margin-bottom: 50px;
-            text-align: center;
-        }
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 40px;
-        }
-        .about-card {
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 16px;
-            border: 1px solid #2a2a2a;
-        }
-        .about-card h3 {
-            color: #a855f7;
-            margin-bottom: 15px;
-        }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-top: 40px;
-        }
-        .skill-card {
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 16px;
-            text-align: center;
-            border: 1px solid #2a2a2a;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-        .skill-card:hover {
-            transform: translateY(-5px);
-            border-color: #a855f7;
-        }
-        .skill-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-        .experience-timeline {
-            margin-top: 40px;
-        }
-        .timeline-item {
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 16px;
-            margin-bottom: 20px;
-            border-left: 4px solid #a855f7;
-        }
-        .timeline-item h3 {
-            color: #a855f7;
-            margin-bottom: 10px;
-        }
-        .timeline-item .date {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 40px;
-        }
-        .cert-card {
-            background: #1a1a1a;
-            padding: 25px;
-            border-radius: 16px;
-            border: 1px solid #2a2a2a;
-            transition: transform 0.3s;
-        }
-        .cert-card:hover {
-            transform: translateY(-5px);
-        }
-        .cert-card h4 {
-            color: #a855f7;
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-        .cert-card p {
-            color: #999;
-            font-size: 14px;
-        }
-        .project {
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 16px;
-            margin-bottom: 30px;
-            border: 1px solid #2a2a2a;
-            transition: transform 0.3s;
-        }
-        .project:hover {
-            transform: translateY(-5px);
-            border-color: #a855f7;
-        }
-        .project h3 {
-            color: #fff;
-            margin-bottom: 15px;
-        }
-        .project-tags {
-            margin-top: 15px;
-        }
-        .project-tags span {
-            background: rgba(168, 85, 247, 0.2);
-            color: #a855f7;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-right: 8px;
-        }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .contact-card {
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 16px;
-            border: 1px solid #2a2a2a;
-            text-align: center;
-        }
-        .contact-card h3 {
-            color: #fff;
-            margin-bottom: 15px;
-        }
-        .contact-card a {
-            color: #a855f7;
-            text-decoration: none;
-            font-size: 18px;
-            word-break: break-all;
-        }
-        .contact-card a:hover {
-            color: #ec4899;
-        }
-        footer {
-            text-align: center;
-            padding: 40px;
-            background: #0a0a0a;
-            border-top: 1px solid #222;
+        .lang-tag:hover { background: rgba(168,85,247,0.26); transform: translateY(-2px); }
+
+        /* Experience */
+        .experience-timeline { margin-top: 40px; }
+        .timeline-item { background: #1a1a1a; padding: 30px; border-radius: 16px; margin-bottom: 20px; border-left: 4px solid #a855f7; }
+        .timeline-item h3 { color: #a855f7; margin-bottom: 10px; }
+        .timeline-item .date { color: #666; font-size: 14px; margin-bottom: 15px; }
+
+        /* Certs */
+        .cert-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 40px; }
+        .cert-card { background: #1a1a1a; padding: 25px; border-radius: 16px; border: 1px solid #2a2a2a; transition: transform .3s; }
+        .cert-card:hover { transform: translateY(-5px); }
+        .cert-card h4 { color: #a855f7; margin-bottom: 10px; font-size: 16px; }
+        .cert-card p  { color: #999; font-size: 14px; }
+
+        /* Projects */
+        .project { background: #1a1a1a; padding: 30px; border-radius: 16px; margin-bottom: 30px; border: 1px solid #2a2a2a; transition: transform .3s; }
+        .project:hover { transform: translateY(-5px); border-color: #a855f7; }
+        .project h3 { color: #fff; margin-bottom: 14px; font-size: 20px; }
+        .project p  { color: #bbb; margin-bottom: 8px; line-height: 1.65; }
+        .project a  { color: #a855f7; text-decoration: none; }
+        .project a:hover { color: #ec4899; }
+        .project-tags { margin-top: 16px; }
+        .project-tags span { display: inline-block; background: rgba(168,85,247,0.2); color: #a855f7; padding: 5px 12px; border-radius: 20px; font-size: 12px; margin-right: 8px; margin-bottom: 6px; }
+
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; margin-left: 10px; vertical-align: middle; }
+        .badge-wip  { background: rgba(251,191,36,0.18); color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
+        .badge-done { background: rgba(34,197,94,0.15);  color: #22c55e; border: 1px solid rgba(34,197,94,0.25); }
+
+        /* Contact */
+        .contact-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 30px; margin-top: 40px; }
+        .contact-card { background: #1a1a1a; padding: 30px; border-radius: 16px; border: 1px solid #2a2a2a; text-align: center; }
+        .contact-card h3 { color: #fff; margin-bottom: 15px; }
+        .contact-card a  { color: #a855f7; text-decoration: none; font-size: 18px; word-break: break-all; }
+        .contact-card a:hover { color: #ec4899; }
+
+        footer { text-align: center; padding: 40px; background: #0a0a0a; border-top: 1px solid #222; }
+
+        @media (max-width: 1000px) {
+            .skills-top-box { grid-template-columns: repeat(2,1fr); }
+            .skills-bottom  { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
-            .nav {
-                padding: 15px 20px;
-            }
-            .nav-links {
-                display: none;
-            }
-            .hero h1 { 
-                font-size: 48px; 
-            }
-            .hero .subtitle {
-                font-size: 18px;
-            }
-            .skills-grid, .cert-grid, .contact-grid { 
-                grid-template-columns: 1fr; 
-            }
-            .about-grid { 
-                grid-template-columns: 1fr; 
-            }
-            section {
-                padding: 60px 20px;
-            }
+            .nav { padding: 15px 20px; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 48px; }
+            .hero .subtitle { font-size: 18px; }
+            .about-grid, .contact-grid, .cert-grid { grid-template-columns: 1fr; }
+            .skills-top-box { grid-template-columns: 1fr 1fr; }
+            section { padding: 60px 20px; }
+        }
+        @media (max-width: 480px) {
+            .skills-top-box { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+
 <nav class="nav">
     <div class="logo">JE</div>
     <div class="nav-links">
@@ -309,7 +170,7 @@
             <h3>🎓 Education</h3>
             <p><strong>Faculty of Computers and Artificial Intelligence</strong></p>
             <p>Cairo University</p>
-            <p>2024 - 2028</p>
+            <p>2024 – 2028</p>
         </div>
         <div class="about-card">
             <h3>💡 Who I Am</h3>
@@ -320,26 +181,70 @@
 
 <section id="skills">
     <h2>My Skills & Development</h2>
-    <div class="skills-grid">
-        <div class="skill-card">
+
+    <div class="skills-top-box">
+        <div class="skill-quality">
             <div class="skill-icon">⚡</div>
             <h3>Fast</h3>
             <p>Optimal performance ensuring quick load times and seamless user experiences</p>
         </div>
-        <div class="skill-card">
+        <div class="skill-quality">
             <div class="skill-icon">📱</div>
             <h3>Responsive</h3>
             <p>Adaptive layouts designed to work seamlessly on any screen size</p>
         </div>
-        <div class="skill-card">
+        <div class="skill-quality">
             <div class="skill-icon">💡</div>
             <h3>Intuitive</h3>
             <p>Creating user-friendly interfaces that prioritize ease of use</p>
         </div>
-        <div class="skill-card">
+        <div class="skill-quality">
             <div class="skill-icon">🚀</div>
             <h3>Dynamic</h3>
             <p>Bringing web designs to life with smooth animations and interactions</p>
+        </div>
+    </div>
+
+    <div class="skills-bottom">
+        <div class="lang-box">
+            <h3>🖥️ Languages & Technologies</h3>
+            <div class="lang-tags">
+                <span class="lang-tag">C++</span>
+                <span class="lang-tag">Java</span>
+                <span class="lang-tag">JavaScript</span>
+                <span class="lang-tag">HTML</span>
+                <span class="lang-tag">CSS</span>
+                <span class="lang-tag">C</span>
+                <span class="lang-tag">Python</span>
+                <span class="lang-tag">Django</span>
+                <span class="lang-tag">SQL</span>
+                <span class="lang-tag">LCNC Tools</span>
+                <span class="lang-tag">Git</span>
+                <span class="lang-tag">GitHub</span>
+            </div>
+        </div>
+        <div class="lang-box">
+            <h3>🤖 AI Tools</h3>
+            <div class="lang-tags">
+                <span class="lang-tag">ChatGPT</span>
+                <span class="lang-tag">Claude</span>
+                <span class="lang-tag">GitHub Copilot</span>
+                <span class="lang-tag">Prompt Engineering</span>
+                <span class="lang-tag">AI-Assisted Development</span>
+            </div>
+        </div>
+        <div class="lang-box" style="grid-column: 1 / -1;">
+            <h3>💼 Professional Skills</h3>
+            <div class="lang-tags">
+                <span class="lang-tag">Web Development</span>
+                <span class="lang-tag">Freelancing</span>
+                <span class="lang-tag">Proposal Writing</span>
+                <span class="lang-tag">Portfolio Creation</span>
+                <span class="lang-tag">Client Communication</span>
+                <span class="lang-tag">Financial Management</span>
+                <span class="lang-tag">Marketing Strategies</span>
+                <span class="lang-tag">Competitive Programming</span>
+            </div>
         </div>
     </div>
 </section>
@@ -349,54 +254,76 @@
     <div class="experience-timeline">
         <div class="timeline-item">
             <h3>Data Science Intern</h3>
-            <p class="date">Commercial International Bank (CIB) | July 2025 - August 2025</p>
+            <p class="date">Commercial International Bank (CIB) | July 2025 – August 2025</p>
             <p>Gained hands-on experience in data analysis, machine learning, and business intelligence, working on real-world banking data projects.</p>
+        </div>
+        <div class="timeline-item">
+            <h3>ECPC Participant – Egyptian Collegiate Programming Contest</h3>
+            <p class="date">ECPC | 2025</p>
+            <p>Participated in Egypt's most prestigious collegiate competitive programming contest, tackling algorithmic challenges under time pressure and competing against top computer science students from universities across Egypt.</p>
         </div>
     </div>
 
     <h2 style="margin-top: 80px;">Certifications</h2>
     <div class="cert-grid">
-        <div class="cert-card">
-            <h4>AWS Cloud Practitioner</h4>
-            <p>Amazon Web Services</p>
-        </div>
-        <div class="cert-card">
-            <h4>Data Science Fundamentals</h4>
-            <p>CIB Training Program</p>
-        </div>
-        <div class="cert-card">
-            <h4>Web Development</h4>
-            <p>Responsive Design Certification</p>
-        </div>
-        <div class="cert-card">
-            <h4>Python Programming</h4>
-            <p>Advanced Python Concepts</p>
-        </div>
-        <div class="cert-card">
-            <h4>C++ Programming</h4>
-            <p>Object-Oriented Design</p>
-        </div>
-        <div class="cert-card">
-            <h4>Git & GitHub</h4>
-            <p>Version Control Systems</p>
+        <div class="cert-card"><h4>AWS Cloud Practitioner</h4><p>Amazon Web Services</p></div>
+        <div class="cert-card"><h4>Data Science Fundamentals</h4><p>CIB Training Program</p></div>
+        <div class="cert-card"><h4>Web Development</h4><p>Responsive Design Certification</p></div>
+        <div class="cert-card"><h4>Python Programming</h4><p>Advanced Python Concepts</p></div>
+        <div class="cert-card"><h4>C++ Programming</h4><p>Object-Oriented Design</p></div>
+        <div class="cert-card"><h4>Git & GitHub</h4><p>Version Control Systems</p></div>
+        <div class="cert-card" style="border-color: rgba(168,85,247,0.4);">
+            <h4>ITIDA Gigs Freelancing Program</h4>
+            <p>ITIDA × EYouth — 3-month program covering profile setup, proposal writing, portfolio creation, financial management, negotiation & communication, and marketing strategies. Completed "Freelancing 101" training, weekly webinars, and niche coaching sessions. Successfully landed first freelance gig.</p>
         </div>
     </div>
 </section>
 
 <section id="projects">
     <h2>Featured Projects</h2>
+
     <div class="project">
-        <h3>Juceify – Audio Plugin Project</h3>
+        <h3>Juceify – Audio Plugin Project <span class="badge badge-done">Completed</span></h3>
         <p>A sophisticated JUCE-based audio application demonstrating advanced C++ programming, UI/UX development, and real-time audio processing capabilities.</p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/Codedloaded/Juceify" target="_blank">View Repository</a></p>
-        <p><strong>Live Demo:</strong> <a href="https://www.youtube.com/watch?v=itctxfrbRPQ" target="_blank">Watch on YouTube</a></p>
-        <div class="project-tags">
-            <span>C++</span>
-            <span>JUCE</span>
-            <span>Audio Processing</span>
-            <span>UI Design</span>
-        </div>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Codedloaded/Juceify" target="_blank">View Repository</a> &nbsp;|&nbsp; <strong>Live Demo:</strong> <a href="https://www.youtube.com/watch?v=itctxfrbRPQ" target="_blank">Watch on YouTube</a></p>
+        <div class="project-tags"><span>C++</span><span>JUCE</span><span>Audio Processing</span><span>UI Design</span></div>
     </div>
+
+    <div class="project">
+        <h3>Quiz Quest – Interactive Quiz Platform <span class="badge badge-done">Completed</span></h3>
+        <p>A dynamic and engaging quiz web application where users can test their knowledge across various categories and difficulty levels. Features a clean UI, real-time score tracking, timed questions, and a smooth question-flow experience designed to make learning fun and competitive.</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Jana-elhenawy/Quiz-Quest-.git" target="_blank">View Repository</a></p>
+        <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Web Development</span></div>
+    </div>
+
+    <div class="project">
+        <h3>Caloriq – AI-Powered Calorie Tracker <span class="badge badge-done">Completed</span></h3>
+        <p>A no-code / low-code web application built with Base44 that helps users track their daily calorie intake with ease. Log meals, monitor nutritional goals, and visualize your progress — all through a clean, intuitive interface powered by AI assistance and modern LCNC tooling.</p>
+        <p><strong>Live App:</strong> <a href="https://caloriq.base44.app/" target="_blank">caloriq.base44.app</a></p>
+        <div class="project-tags"><span>LCNC</span><span>Base44</span><span>AI Tools</span><span>Health Tech</span></div>
+    </div>
+
+    <div class="project">
+        <h3>Cooking Star – Recipe Finder <span class="badge badge-wip">In Progress</span></h3>
+        <p>A full-stack recipe finder website where users can search for recipes by ingredients, cuisine, or dish name. Built with a Django backend serving a REST API and a dynamic HTML/CSS/JavaScript frontend, Cooking Star aims to make discovering and saving recipes effortless and enjoyable.</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Codedloaded/Cooking-Star.git" target="_blank">View Repository</a></p>
+        <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>Django</span><span>REST API</span></div>
+    </div>
+
+    <div class="project">
+        <h3>Weather Dashboard <span class="badge badge-done">Completed</span></h3>
+        <p>A sleek, responsive weather app that fetches real-time data from the OpenWeatherMap API. Features include city search, a 5-day forecast, hourly temperature strip, dynamic backgrounds that shift with weather conditions (sunny, rainy, stormy, snowy), and a metric/imperial unit toggle — all with zero frameworks, pure HTML, CSS, and JavaScript.</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Jana-elhenawy/weather-dashboard" target="_blank">View Repository</a></p>
+        <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>REST API</span><span>OpenWeatherMap</span></div>
+    </div>
+
+    <div class="project">
+        <h3>Student Grade Management System – SQL <span class="badge badge-done">Completed</span></h3>
+        <p>A relational database project for managing university student records, course enrollments, and grades. Includes a fully normalized schema with 6 tables, auto-calculated letter grades and GPA using MySQL generated columns, views for student transcripts and course performance analytics, a trigger that initializes grade rows on enrollment, a stored procedure for full student reports, and 10 analytical queries covering top students per course, grade distribution, attendance rates, and instructor workload.</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Jana-elhenawy/student-grade-management-sql" target="_blank">View Repository</a></p>
+        <div class="project-tags"><span>SQL</span><span>MySQL</span><span>Database Design</span><span>Views</span><span>Stored Procedures</span><span>Triggers</span></div>
+    </div>
+
 </section>
 
 <section id="contact">
@@ -404,7 +331,7 @@
     <div class="contact-grid">
         <div class="contact-card">
             <h3>📧 Email</h3>
-            <a href="mailto:janaelhenawy06@gmail.com">janaelhenawy06@gmail.com</a>
+            <a href="/cdn-cgi/l/email-protection#0c666d626d69606469626d7b753c3a4c6b616d6560226f6361"><span class="__cf_email__" data-cfemail="b0dad1ded1d5dcd8d5ded1c7c98086f0d7ddd1d9dc9ed3dfdd">[email&#160;protected]</span></a>
         </div>
         <div class="contact-card">
             <h3>💼 LinkedIn</h3>
@@ -416,13 +343,4 @@
         </div>
         <div class="contact-card">
             <h3>📄 Resume</h3>
-            <a href="#" download>Download CV</a>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <p>© 2025 Jana Elhenawy. Built with passion and code.</p>
-</footer>
-</body>
-</html>
+            <a href="#" download>Download
