@@ -110,9 +110,18 @@
         .project-tags { margin-top: 16px; }
         .project-tags span { display: inline-block; background: rgba(168,85,247,0.2); color: #a855f7; padding: 5px 12px; border-radius: 20px; font-size: 12px; margin-right: 8px; margin-bottom: 6px; }
 
+        /* Featured project highlight */
+        .project.featured {
+            border-color: rgba(234,179,8,0.4);
+            background: linear-gradient(135deg, #1a1a1a 0%, #1a1600 100%);
+            box-shadow: 0 0 30px rgba(234,179,8,0.07);
+        }
+        .project.featured:hover { border-color: #eab308; }
+
         .badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; margin-left: 10px; vertical-align: middle; }
         .badge-wip  { background: rgba(251,191,36,0.18); color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
         .badge-done { background: rgba(34,197,94,0.15);  color: #22c55e; border: 1px solid rgba(34,197,94,0.25); }
+        .badge-competition { background: rgba(234,179,8,0.18); color: #eab308; border: 1px solid rgba(234,179,8,0.35); }
 
         /* Contact */
         .contact-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 30px; margin-top: 40px; }
@@ -282,6 +291,27 @@
 <section id="projects">
     <h2>Featured Projects</h2>
 
+    <!-- FinCircle – highlighted as competition project -->
+    <div class="project featured">
+        <h3>
+            FinCircle – Digital Financial App
+            <span class="badge badge-wip">In Progress</span>
+            <span class="badge badge-competition">🏆 Finyology · CBE</span>
+        </h3>
+        <p>A full-featured Egyptian fintech app built for the <strong>Finyology competition by the Central Bank of Egypt (CBE)</strong>. FinCircle is a bilingual (Arabic/English) personal finance platform designed with an Egypt-first lens — bringing together expense tracking, smart installment management (taqseet), a digital Gam'eya (rotating savings circles), a virtual NFC-enabled card, Zakat & Sadaqa calculator, P2P lending, salary advance, EGX paper trading simulation, an AI financial advisor in Egyptian Arabic dialect, and more.</p>
+        <p>Key differentiators include offline NFC payments with automatic sync, multi-currency support (EGP/USD/EUR/SAR), a financial health score system, and CBE-compliant international transfer flows — all in a single responsive interface.</p>
+        <p>
+            <strong>GitHub:</strong> <a href="https://github.com/Jana-elhenawy/FinCircle" target="_blank">View Repository</a>
+            &nbsp;|&nbsp;
+            <strong>Live Prototype:</strong> <a href="https://jana-elhenawy.github.io/FinCircle/" target="_blank">View Prototype</a>
+        </p>
+        <div class="project-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Fintech</span>
+            <span>NFC Payments</span><span>AI Advisor</span><span>Arabic/English</span>
+            <span>CBE Finyology</span>
+        </div>
+    </div>
+
     <div class="project">
         <h3>Juceify – Audio Plugin Project <span class="badge badge-done">Completed</span></h3>
         <p>A sophisticated JUCE-based audio application demonstrating advanced C++ programming, UI/UX development, and real-time audio processing capabilities.</p>
@@ -314,17 +344,18 @@
         <h3>Weather Dashboard <span class="badge badge-done">Completed</span></h3>
         <p>A sleek, responsive weather app that fetches real-time data from the OpenWeatherMap API. Features include city search, a 5-day forecast, hourly temperature strip, dynamic backgrounds that shift with weather conditions (sunny, rainy, stormy, snowy), and a metric/imperial unit toggle — all with zero frameworks, pure HTML, CSS, and JavaScript.</p>
         <p><strong>GitHub:</strong> <a href="https://github.com/Jana-elhenawy/weather-dashboard" target="_blank">View Repository</a></p>
-         <p><strong>Website:</strong> <a href="https://jana-elhenawy.github.io//weather-dashboard/" target="_blank">View Website</a></p>
+        <p><strong>Website:</strong> <a href="https://jana-elhenawy.github.io//weather-dashboard/" target="_blank">View Website</a></p>
         <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>REST API</span><span>OpenWeatherMap</span></div>
     </div>
 
     <div class="project">
         <h3>Portfolio Website <span class="badge badge-done">Completed</span></h3>
-        <p>A sleek, responsive Portfolio Website for 2 students Rofida and Nour. all with zero frameworks, pure HTML and CSS.</p>
+        <p>A sleek, responsive Portfolio Website for 2 students Rofida and Nour. All with zero frameworks, pure HTML and CSS.</p>
         <p><strong>GitHub:</strong> <a href="https://github.com/Jana-elhenawy/rofida-nour-portfolio" target="_blank">View Repository</a></p>
-         <p><strong>Website:</strong> <a href="https://jana-elhenawy.github.io/rofida-nour-portfolio/" target="_blank">View Website</a></p>
+        <p><strong>Website:</strong> <a href="https://jana-elhenawy.github.io/rofida-nour-portfolio/" target="_blank">View Website</a></p>
         <div class="project-tags"><span>HTML</span><span>CSS</span><span>Portfolio Website</span></div>
     </div>
+
     <div class="project">
         <h3>Student Grade Management System – SQL <span class="badge badge-done">Completed</span></h3>
         <p>A relational database project for managing university student records, course enrollments, and grades. Includes a fully normalized schema with 6 tables, auto-calculated letter grades and GPA using MySQL generated columns, views for student transcripts and course performance analytics, a trigger that initializes grade rows on enrollment, a stored procedure for full student reports, and 10 analytical queries covering top students per course, grade distribution, attendance rates, and instructor workload.</p>
@@ -339,7 +370,7 @@
     <div class="contact-grid">
         <div class="contact-card">
             <h3>📧 Email</h3>
-           <a href="mailto:Janaelhenawy@gmail.com">Janaelhenawy@gmail.com</a>
+            <a href="mailto:Janaelhenawy@gmail.com">Janaelhenawy@gmail.com</a>
         </div>
         <div class="contact-card">
             <h3>💼 LinkedIn</h3>
@@ -352,3 +383,13 @@
         <div class="contact-card">
             <h3>📄 Resume</h3>
             <a href="Jana_Elhenawy_CV.pdf" download>Download CV</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p style="color: #666;">© 2025 Jana Elhenawy. Built with passion and purpose.</p>
+</footer>
+
+</body>
+</html>
