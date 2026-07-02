@@ -259,6 +259,14 @@ body {
 .project-card.featured-card .proj-left { flex: 1; }
 .project-card.featured-card .proj-right { flex: 1; }
 
+.case-study { margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
+.case-row { display: flex; gap: 10px; }
+.case-label {
+  font-family: var(--ff-mono); font-size: 10px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--gold); min-width: 78px; padding-top: 2px; flex-shrink: 0;
+}
+.case-text { font-size: 13.5px; color: var(--body); line-height: 1.65; }
+
 .proj-badges { display: flex; gap: 8px; flex-wrap: wrap; }
 .badge {
   font-family: var(--ff-mono); font-size: 10px; letter-spacing: .08em;
@@ -440,8 +448,8 @@ footer a { color: var(--gold); text-decoration: none; }
   <h2 class="section-title reveal">Who I Am</h2>
   <div class="about-layout reveal">
     <div class="about-bio">
-      <p>I'm a second-year Computer Science student at Cairo University's Faculty of Computers and AI, building at the intersection of <strong>web development, data science, and fintech</strong>.</p>
-      <p>This year I shipped a <strong>CBE competition fintech app</strong>, completed a <strong>data science internship at CIB</strong>, competed in the ECPC, and built a cloud-based early intervention platform affiliated with the Henawy Foundation — all while carrying a full course load.</p>
+      <p>I'm a Computer Science student at Cairo University's Faculty of Computers and AI, building at the intersection of <strong>web development, data science, and fintech</strong>.</p>
+      <p>Most recently I helped build <strong>Smart Shuttle</strong>, a geospatial ride-matching app for the IntelliShift Hackathon that reached the semi-final round. Before that I shipped a <strong>CBE competition fintech app</strong>, completed a <strong>data science internship at CIB</strong>, and competed in the ECPC — all while carrying a full course load.</p>
       <p>I gravitate toward projects that have real-world impact: apps with Egyptian cultural context, systems that help people understand their finances, tools that make data accessible. I care about the craft — clean code, thoughtful UX, and details that make a product feel finished.</p>
     </div>
     <div class="about-cards">
@@ -461,8 +469,8 @@ footer a { color: var(--gold); text-decoration: none; }
       </div>
       <div class="info-card">
         <div class="label">🏆 Latest Win</div>
-        <div class="value">CBE Finyology 2026 Finalist</div>
-        <div class="sub-value">National fintech competition, Central Bank of Egypt</div>
+        <div class="value">IntelliShift Hackathon Semi-Finalist</div>
+        <div class="sub-value">Smart Apps track, Cairo University FCAI</div>
       </div>
     </div>
   </div>
@@ -526,6 +534,17 @@ footer a { color: var(--gold); text-decoration: none; }
   <div class="activities-grid reveal">
 
     <div class="activity-card">
+      <div class="act-date">2026</div>
+      <div class="act-title">IntelliShift Hackathon — Semi-Finalist</div>
+      <div class="act-org">Faculty of Computers and AI, Cairo University · Smart Apps Track</div>
+      <ul class="act-desc">
+        <li>Co-built Smart Shuttle, a shared university commuting app, with teammate Omar Mohamed.</li>
+        <li>Owned the matching algorithm and full technical architecture (layered system, ER/UML diagrams).</li>
+        <li>Delivered a working prototype under tight time pressure, advancing to the semi-final round.</li>
+      </ul>
+    </div>
+
+    <div class="activity-card">
       <div class="act-date">Apr – May 2025</div>
       <div class="act-title">CBE Finyology Hackathon Finalist</div>
       <div class="act-org">Central Bank of Egypt · National Competition</div>
@@ -558,27 +577,48 @@ footer a { color: var(--gold); text-decoration: none; }
   <h2 class="section-title reveal">Featured Projects</h2>
   <div class="projects-grid reveal">
 
-    <!-- FEATURED: FinCircle -->
+    <!-- FEATURED: Smart Shuttle -->
     <div class="project-card featured-card">
       <div class="proj-left">
         <div class="proj-badges">
           <span class="badge badge-wip">In Progress</span>
-          <span class="badge badge-comp">🏆 CBE Finyology</span>
+          <span class="badge badge-comp">🏆 IntelliShift Semi-Finalist</span>
         </div>
-        <h3 class="proj-title" style="margin-top:14px; font-size:28px;">FinCircle</h3>
-        <p class="proj-desc" style="margin-top:8px;">Full-featured Egyptian fintech platform built for the Central Bank of Egypt's national Finyology competition. Bilingual Arabic/English, built with an Egypt-first lens.</p>
+        <h3 class="proj-title" style="margin-top:14px; font-size:28px;">Smart Shuttle</h3>
+        <p class="proj-desc" style="margin-top:8px;">A shared commuting app that matches Cairo University students traveling similar routes into shuttles or carpools — cutting transportation cost, road congestion, and emissions. Built for the IntelliShift Hackathon's Smart Apps track.</p>
       </div>
       <div class="proj-right">
-        <p class="proj-desc">Features Digital Gam'eya (rotating savings circles), Smart BNPL taqseet advisor, AI Financial Advisor in Egyptian Arabic dialect, EGX paper trading simulation, Zakat calculator, NFC-enabled card, financial health scoring, and CBE-compliant international transfers.</p>
+        <div class="case-study">
+          <div class="case-row"><div class="case-label">Problem</div><div class="case-text">Students commuting independently to the same campus along overlapping routes means wasted cost, traffic, and emissions that shared transport could solve.</div></div>
+          <div class="case-row"><div class="case-label">Solution</div><div class="case-text">A geospatial matching engine — haversine-distance route proximity, radius/time-window filtering, and pickup sequencing — that groups compatible riders automatically.</div></div>
+          <div class="case-row"><div class="case-label">My role</div><div class="case-text">Co-built with teammate Omar Mohamed: owned the matching algorithm design and system architecture (layered architecture, ER diagrams, full UML suite).</div></div>
+          <div class="case-row"><div class="case-label">Challenges</div><div class="case-text">Balancing match quality against pickup-sequencing complexity, and shipping a working prototype end-to-end under hackathon time pressure.</div></div>
+        </div>
         <div class="proj-tags" style="margin-top:16px;">
-          <span class="proj-tag">HTML</span><span class="proj-tag">CSS</span>
-          <span class="proj-tag">JavaScript</span><span class="proj-tag">Anthropic API</span>
-          <span class="proj-tag">Fintech</span><span class="proj-tag">Arabic/English</span>
+          <span class="proj-tag">React</span><span class="proj-tag">TypeScript</span>
+          <span class="proj-tag">Python</span><span class="proj-tag">Geospatial Matching</span>
         </div>
         <div class="proj-links" style="margin-top:20px;">
-          <a href="https://jana-elhenawy.github.io/FinCircle/" target="_blank" class="proj-link">Live Prototype</a>
-          <a href="https://github.com/Jana-elhenawy/FinCircle" target="_blank" class="proj-link">GitHub</a>
+          <a href="https://github.com/Jana-elhenawy/Smart-Shuttle" target="_blank" class="proj-link">GitHub</a>
         </div>
+      </div>
+    </div>
+
+    <!-- FinCircle -->
+    <div class="project-card">
+      <div class="proj-badges">
+        <span class="badge badge-wip">In Progress</span>
+        <span class="badge badge-comp">🏆 CBE Finyology</span>
+      </div>
+      <h3 class="proj-title" style="margin-top:14px;">FinCircle</h3>
+      <p class="proj-desc">Full-featured bilingual Egyptian fintech platform built for the CBE's national Finyology competition. Features Digital Gam'eya, Smart BNPL, an AI advisor in Egyptian Arabic, EGX paper trading, NFC payments, and a Zakat calculator — designed with an Egypt-first UX.</p>
+      <div class="proj-tags">
+        <span class="proj-tag">HTML</span><span class="proj-tag">CSS</span>
+        <span class="proj-tag">JavaScript</span><span class="proj-tag">Anthropic API</span>
+      </div>
+      <div class="proj-links">
+        <a href="https://jana-elhenawy.github.io/FinCircle/" target="_blank" class="proj-link">Live Prototype</a>
+        <a href="https://github.com/Jana-elhenawy/FinCircle" target="_blank" class="proj-link">GitHub</a>
       </div>
     </div>
 
@@ -586,7 +626,6 @@ footer a { color: var(--gold); text-decoration: none; }
     <div class="project-card">
       <div class="proj-badges">
         <span class="badge badge-done">Completed</span>
-        <span class="badge badge-new">New</span>
       </div>
       <h3 class="proj-title" style="margin-top:14px;">Urban Fleet &amp; Maintenance Hub</h3>
       <p class="proj-desc">Desktop application for transportation fleet management. Covers vehicle tracking, maintenance scheduling, driver records, inspection logs, and work orders. SQL Server backend with stored procedures, triggers, and full normalization.</p>
@@ -603,7 +642,6 @@ footer a { color: var(--gold); text-decoration: none; }
     <div class="project-card">
       <div class="proj-badges">
         <span class="badge badge-done">Completed</span>
-        <span class="badge badge-new">New</span>
       </div>
       <h3 class="proj-title" style="margin-top:14px;">Budgeting SW</h3>
       <p class="proj-desc">Personal finance desktop app built with JavaFX. Income/expense tracking, category management, and a polished dark-themed UI. Demonstrates Java OOP and FXML-based UI design with Maven build system.</p>
@@ -690,6 +728,7 @@ footer a { color: var(--gold); text-decoration: none; }
         <span class="tag accent">Python</span>
         <span class="tag accent">Java</span>
         <span class="tag accent">JavaScript</span>
+        <span class="tag accent">TypeScript</span>
         <span class="tag">C++</span>
         <span class="tag">C</span>
         <span class="tag">C#</span>
@@ -700,6 +739,7 @@ footer a { color: var(--gold); text-decoration: none; }
     <div class="skill-group">
       <div class="skill-group-title">Frameworks & Libraries</div>
       <div class="tags">
+        <span class="tag accent">React</span>
         <span class="tag accent">Django</span>
         <span class="tag accent">Django REST Framework</span>
         <span class="tag">JavaFX</span>
@@ -715,6 +755,7 @@ footer a { color: var(--gold); text-decoration: none; }
         <span class="tag">Stored Procedures</span>
         <span class="tag">Triggers & Views</span>
         <span class="tag">Database Normalization</span>
+        <span class="tag">Geospatial Matching</span>
         <span class="tag">matplotlib / PIL</span>
       </div>
     </div>
@@ -811,7 +852,7 @@ footer a { color: var(--gold); text-decoration: none; }
 </section>
 
 <footer>
-  <span>© 2025 Jana Elhenawy</span>
+  <span>© 2026 Jana Elhenawy</span>
   <span>Cairo University FCAI &nbsp;·&nbsp; Built with purpose.</span>
 </footer>
 
