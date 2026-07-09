@@ -5,26 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jana Elhenawy — Full-Stack Developer & Data Enthusiast</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ── RESET & TOKENS ──────────────────────────────────────────────── */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 
+/* Palette v3: pastel — same cat-and-bird world, softened into a warm
+   cream daylight instead of a neon night. Accents are dusty, not pale,
+   so they still read as text and not just decoration. */
 :root {
-  --ink:        #0e0e10;
-  --ink2:       #1a1a1e;
-  --ink3:       #26262c;
-  --muted:      #5e5e68;
-  --subtle:     #3a3a42;
-  --body:       #c8c8d0;
-  --bright:     #f0f0f4;
-  --gold:       #a855f7;
-  --gold-glow:  rgba(168,85,247,0.18);
-  --teal:       #ec4899;
-  --rose:       #ec4899;
-  --ff-display: 'Playfair Display', Georgia, serif;
-  --ff-body:    'DM Sans', sans-serif;
-  --ff-mono:    'DM Mono', monospace;
+  --ink:        #faf5ef;
+  --ink2:       #ffffff;
+  --ink3:       #f3e9df;
+  --muted:      #a99c8f;
+  --subtle:     #e7dbcf;
+  --body:       #5b4f45;
+  --bright:     #302722;
+  --gold:       #e8829f;
+  --gold-glow:  rgba(232,130,159,0.18);
+  --teal:       #4fb99e;
+  --rose:       #d99a3a;
+  --ff-display: 'Fraunces', Georgia, serif;
+  --ff-body:    'Manrope', sans-serif;
+  --ff-mono:    'JetBrains Mono', monospace;
   --ease:       cubic-bezier(.4,0,.2,1);
   --ease-spring:cubic-bezier(.34,1.56,.64,1);
   --r:          14px;
@@ -40,7 +43,7 @@ body {
   overflow-x: hidden;
 }
 
-::selection { background: linear-gradient(135deg, #a855f7, #ec4899); color: #fff; }
+::selection { background: linear-gradient(135deg, #e8829f, #4fb99e); color: #2f2620; }
 
 /* ── SCROLLBAR ──────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 4px; }
@@ -52,9 +55,9 @@ body {
   position: fixed; top: 0; width: 100%; z-index: 1000;
   display: flex; justify-content: space-between; align-items: center;
   padding: 22px 60px;
-  background: rgba(14,14,16,0.8);
+  background: rgba(250,245,239,0.78);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(48,39,34,0.07);
   transition: padding .3s var(--ease);
 }
 .nav.scrolled { padding: 14px 60px; }
@@ -79,12 +82,12 @@ body {
 .nav-cta {
   display: inline-flex; align-items: center; gap: 6px;
   padding: 9px 18px; border-radius: 7px;
-  background: linear-gradient(135deg, #a855f7, #ec4899);
-  color: #fff !important; font-weight: 600 !important;
+  background: linear-gradient(135deg, #e8829f, #4fb99e);
+  color: #2f2620 !important; font-weight: 600 !important;
   text-transform: none !important; letter-spacing: 0 !important;
 }
 .nav-cta::after { display: none; }
-.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(168,85,247,.35); color:#fff !important; }
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(232,130,159,.35); color:#2f2620 !important; }
 
 /* ── HERO ────────────────────────────────────────────────────────── */
 .hero {
@@ -106,19 +109,48 @@ body {
   position:absolute; border-radius:50%; pointer-events:none; z-index:0;
   filter: blur(80px);
 }
-.orb-1 { width:500px; height:500px; background:radial-gradient(circle, rgba(168,85,247,.12), transparent); top:-200px; right:-100px; animation: drift1 12s ease-in-out infinite alternate; }
-.orb-2 { width:350px; height:350px; background:radial-gradient(circle, rgba(236,72,153,.08), transparent); bottom:-100px; left:-80px; animation: drift2 15s ease-in-out infinite alternate; }
+.orb-1 { width:520px; height:520px; background:radial-gradient(circle, rgba(232,130,159,.22), transparent); top:-200px; right:-100px; animation: drift1 12s ease-in-out infinite alternate; }
+.orb-2 { width:380px; height:380px; background:radial-gradient(circle, rgba(79,185,158,.16), transparent); bottom:-100px; left:-80px; animation: drift2 15s ease-in-out infinite alternate; }
+.orb-3 { width:280px; height:280px; background:radial-gradient(circle, rgba(219,164,73,.13), transparent); top:30%; left:40%; animation: drift1 18s ease-in-out infinite alternate-reverse; }
 
 @keyframes drift1 { to { transform: translate(40px, 60px) scale(1.08); } }
 @keyframes drift2 { to { transform: translate(-30px, -50px) scale(1.12); } }
 
 .hero-inner { position:relative; z-index:1; max-width:920px; text-align:center; }
 
+/* Signature mascot: a line-art cat watching from the corner, eyes lit like
+   the accent color. Purely decorative — kept off to the side and hidden on
+   narrower viewports so it never sits behind or overlaps any text. */
+.hero-cat {
+  position: absolute; z-index: 0; pointer-events: none;
+  width: 190px; height: auto;
+  right: 4%; bottom: 6%;
+  opacity: .65;
+}
+.hero-cat .cat-eye { animation: pulse 2.4s infinite; }
+@media (max-width: 1100px) { .hero-cat { display: none; } }
+
+/* Second creature: a small bird gliding on the opposite side, wings
+   flapping on a loop — movement reads as energy. */
+.hero-bird {
+  position: absolute; z-index: 0; pointer-events: none;
+  width: 90px; height: auto;
+  left: 6%; top: 18%;
+  opacity: .7;
+  animation: birdDrift 6s ease-in-out infinite;
+}
+.hero-bird .wing { animation: flap 0.9s ease-in-out infinite alternate; transform-origin: 50px 40px; }
+.hero-bird .wing.left { animation-delay: 0s; }
+.hero-bird .wing.right { animation-delay: .05s; }
+@keyframes flap { from { transform: scaleY(1); } to { transform: scaleY(.35); } }
+@keyframes birdDrift { 0%,100% { transform: translate(0,0); } 50% { transform: translate(14px,-16px); } }
+@media (max-width: 1100px) { .hero-bird { display: none; } }
+
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 10px;
   font-family: var(--ff-mono); font-size: 12px; letter-spacing: .14em;
   text-transform: uppercase; color: var(--gold);
-  background: rgba(168,85,247,.08); border: 1px solid rgba(168,85,247,.2);
+  background: rgba(232,130,159,.08); border: 1px solid rgba(232,130,159,.2);
   padding: 8px 18px; border-radius: 999px; margin-bottom: 32px;
   animation: fadeUp .6s var(--ease) both;
 }
@@ -132,8 +164,13 @@ body {
   animation: fadeUp .7s .1s var(--ease) both;
 }
 .hero h1 em {
-  font-style: italic; color: var(--gold);
+  font-style: italic;
+  background: linear-gradient(90deg, var(--gold), var(--teal), var(--rose), var(--gold));
+  background-size: 300% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: shimmer 5s linear infinite;
 }
+@keyframes shimmer { to { background-position: 300% 0; } }
 .hero .sub {
   font-size: 17px; color: var(--muted); font-weight: 300;
   letter-spacing: .02em; margin-bottom: 12px;
@@ -158,32 +195,62 @@ body {
   transition: all .25s var(--ease); cursor: pointer;
 }
 .btn-gold {
-  background: linear-gradient(135deg, #a855f7, #ec4899); color: #fff;
+  background: linear-gradient(135deg, #e8829f, #4fb99e); color: #2f2620;
 }
-.btn-gold:hover { background: #c084fc; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(168,85,247,.35); }
+.btn-gold:hover { background: #f2a8bd; transform: translateY(-2px) scale(1.03); box-shadow: 0 10px 28px rgba(232,130,159,.45); }
 .btn-ghost {
   border: 1px solid var(--subtle); color: var(--body);
 }
 .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 
-.scroll-hint {
-  position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  color: var(--muted); font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+/* Scroll cue sits in normal document flow below the CTAs (never absolutely
+   pinned over other text), so it can't collide with the buttons or credential
+   line above it on short viewports. A single paw print bounces in place —
+   no second word for "Scroll" to overlap against. */
+.scroll-cue {
+  margin-top: 64px;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  color: var(--muted); font-size: 10px; letter-spacing: .16em; text-transform: uppercase;
   font-family: var(--ff-mono); animation: fadeIn 1s 1s both;
 }
-.scroll-arrow { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--muted), transparent); animation: scrollDown 1.6s ease-in-out infinite; }
-@keyframes scrollDown { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform:scaleY(1);transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
+.scroll-cue .paw {
+  width: 16px; height: 16px;
+  background-color: var(--gold);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='40' r='14'/%3E%3Ccircle cx='12' cy='20' r='8'/%3E%3Ccircle cx='32' cy='12' r='8.5'/%3E%3Ccircle cx='52' cy='20' r='8'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='40' r='14'/%3E%3Ccircle cx='12' cy='20' r='8'/%3E%3Ccircle cx='32' cy='12' r='8.5'/%3E%3Ccircle cx='52' cy='20' r='8'/%3E%3C/svg%3E") center/contain no-repeat;
+  animation: pawBounce 1.6s ease-in-out infinite;
+}
+@keyframes pawBounce { 0%,100%{ transform: translateY(0); opacity:.5; } 50%{ transform: translateY(6px); opacity:1; } }
 
 /* ── SECTION WRAPPER ─────────────────────────────────────────────── */
 .section { padding: 100px 60px; max-width: 1160px; margin: auto; }
+
+/* ── SCATTERED CATS: a few little silhouettes hiding around the page ── */
+.section { position: relative; }
+.mini-cat {
+  position: absolute; z-index: 0; pointer-events: none;
+  width: 44px; height: 52px;
+  background-color: var(--gold);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120'%3E%3Cellipse cx='50' cy='85' rx='28' ry='30'/%3E%3Ccircle cx='50' cy='45' r='22'/%3E%3Cpolygon points='30,30 38,8 47,32'/%3E%3Cpolygon points='70,30 62,8 53,32'/%3E%3Cpath d='M75 96q20 4 16 26q-16-5-21-21z'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120'%3E%3Cellipse cx='50' cy='85' rx='28' ry='30'/%3E%3Ccircle cx='50' cy='45' r='22'/%3E%3Cpolygon points='30,30 38,8 47,32'/%3E%3Cpolygon points='70,30 62,8 53,32'/%3E%3Cpath d='M75 96q20 4 16 26q-16-5-21-21z'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+@media (max-width: 800px) { .mini-cat { display: none; } }
+.mc-1 { width:40px; height:47px; top:6px;   right:2%;  opacity:.16; transform: rotate(-9deg); }
+.mc-2 { width:34px; height:40px; top:54px;  left:-6px; opacity:.14; transform: rotate(12deg) scaleX(-1); background-color: var(--teal); }
+.mc-3 { width:30px; height:36px; bottom:24px; right:7%; opacity:.15; transform: rotate(7deg); background-color: var(--rose); }
+.mc-4 { width:48px; height:57px; top:-6px;  left:9%;   opacity:.13; transform: rotate(-15deg) scaleX(-1); }
+.mc-5 { width:36px; height:43px; bottom:4px; left:1%;  opacity:.16; transform: rotate(5deg); background-color: var(--teal); }
+.mc-6 { width:32px; height:38px; top:18px;  right:4%;  opacity:.15; transform: rotate(-6deg) scaleX(-1); background-color: var(--rose); }
 .section-label {
-  display: flex; align-items: center; gap: 12px;
+  display: flex; align-items: center; gap: 10px;
   font-family: var(--ff-mono); font-size: 11px; letter-spacing: .15em;
   text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
 }
 .section-label::before {
-  content:''; width: 28px; height: 1px; background: var(--gold);
+  content:''; width: 15px; height: 15px; flex-shrink: 0;
+  background-color: var(--gold);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cellipse cx='32' cy='36' rx='16' ry='14'/%3E%3Ccircle cx='32' cy='16' r='6'/%3E%3Cpath d='M20 24l-10-8M44 24l10-8M18 40l-12 6M46 40l12 6M20 50l-8 10M44 50l8 10' stroke='%23000' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cellipse cx='32' cy='36' rx='16' ry='14'/%3E%3Ccircle cx='32' cy='16' r='6'/%3E%3Cpath d='M20 24l-10-8M44 24l10-8M18 40l-12 6M46 40l12 6M20 50l-8 10M44 50l8 10' stroke='%23000' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;
 }
 .section-title {
   font-family: var(--ff-display); font-size: clamp(32px, 4vw, 48px);
@@ -242,8 +309,8 @@ body {
   background: var(--ink2); border: 1px solid var(--subtle);
   color: var(--body); transition: all .2s;
 }
-.tag:hover { background: rgba(168,85,247,.1); border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
-.tag.accent { background: rgba(168,85,247,.1); border-color: rgba(168,85,247,.3); color: var(--gold); }
+.tag:hover { background: rgba(232,130,159,.1); border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
+.tag.accent { background: rgba(232,130,159,.1); border-color: rgba(232,130,159,.3); color: var(--gold); }
 
 /* ── PROJECTS ────────────────────────────────────────────────────── */
 .projects-intro {
@@ -265,13 +332,13 @@ body {
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
   opacity:0; transition: opacity .3s;
 }
-.project-card:hover { transform: translateY(-6px); border-color: rgba(168,85,247,.3); box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+.project-card:hover { transform: translateY(-6px); border-color: rgba(232,130,159,.3); box-shadow: 0 20px 60px rgba(48,39,34,.12); }
 .project-card:hover::before { opacity: 1; }
 
 .project-card.featured-card {
   grid-column: 1 / -1;
-  background: linear-gradient(135deg, #1a1600 0%, var(--ink2) 60%);
-  border-color: rgba(168,85,247,.25);
+  background: linear-gradient(135deg, #fdeaf0 0%, var(--ink2) 60%);
+  border-color: rgba(232,130,159,.25);
   flex-direction: row; gap: 40px; align-items: flex-start;
 }
 .project-card.featured-card .proj-left { flex: 1; }
@@ -290,10 +357,10 @@ body {
   font-family: var(--ff-mono); font-size: 10px; letter-spacing: .08em;
   padding: 3px 10px; border-radius: 4px; text-transform: uppercase;
 }
-.badge-wip   { background: rgba(251,191,36,.12); color: #fbbf24; border: 1px solid rgba(251,191,36,.25); }
-.badge-done  { background: rgba(236,72,153,.1);  color: var(--teal); border: 1px solid rgba(236,72,153,.2); }
-.badge-comp  { background: rgba(168,85,247,.12); color: var(--gold); border: 1px solid rgba(168,85,247,.3); }
-.badge-new   { background: rgba(232,105,122,.1); color: var(--rose); border: 1px solid rgba(232,105,122,.2); }
+.badge-wip   { background: rgba(217,154,58,.12); color: #d99a3a; border: 1px solid rgba(217,154,58,.25); }
+.badge-done  { background: rgba(79,185,158,.1);  color: var(--teal); border: 1px solid rgba(79,185,158,.2); }
+.badge-comp  { background: rgba(232,130,159,.12); color: var(--gold); border: 1px solid rgba(232,130,159,.3); }
+.badge-new   { background: rgba(219,164,73,.1); color: var(--rose); border: 1px solid rgba(219,164,73,.2); }
 
 .proj-title {
   font-family: var(--ff-display); font-size: 22px; font-weight: 700;
@@ -330,7 +397,7 @@ body {
   transition: border-color .3s, transform .3s var(--ease);
   border-left: 3px solid var(--gold);
 }
-.activity-card:hover { border-color: rgba(168,85,247,.4); transform: translateY(-4px); }
+.activity-card:hover { border-color: rgba(232,130,159,.4); transform: translateY(-4px); }
 .activity-card .act-date { font-family: var(--ff-mono); font-size: 11px; color: var(--gold); letter-spacing: .08em; margin-bottom: 10px; }
 .activity-card .act-title { font-size: 16px; font-weight: 600; color: var(--bright); margin-bottom: 6px; }
 .activity-card .act-org { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
@@ -358,7 +425,7 @@ body {
 }
 .contact-wrapper::before {
   content:''; position:absolute; inset:0;
-  background: radial-gradient(ellipse at 50% 0%, rgba(168,85,247,.06), transparent 70%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(232,130,159,.06), transparent 70%);
   pointer-events:none;
 }
 .contact-tagline { font-family: var(--ff-display); font-size: 36px; font-style: italic; color: var(--body); margin-bottom: 12px; }
@@ -372,9 +439,9 @@ body {
   text-decoration: none; font-size: 14px; font-weight: 500;
   transition: all .25s var(--ease);
 }
-.contact-link:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); background: rgba(168,85,247,.05); }
-.contact-link.primary { background: linear-gradient(135deg, #a855f7, #ec4899); border-color: transparent; color: #fff; }
-.contact-link.primary:hover { color: #fff; box-shadow: 0 8px 24px rgba(168,85,247,.35); }
+.contact-link:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); background: rgba(232,130,159,.05); }
+.contact-link.primary { background: linear-gradient(135deg, #e8829f, #4fb99e); border-color: transparent; color: #2f2620; }
+.contact-link.primary:hover { color: #2f2620; box-shadow: 0 8px 24px rgba(232,130,159,.35); }
 .contact-link svg { width:16px; height:16px; fill:currentColor; flex-shrink:0; }
 
 /* ── FOOTER ───────────────────────────────────────────────────────── */
@@ -387,8 +454,23 @@ footer {
 }
 footer a { color: var(--gold); text-decoration: none; }
 
-/* ── DIVIDER ──────────────────────────────────────────────────────── */
-.divider { border: none; border-top: 1px solid var(--subtle); margin: 0 60px; }
+/* ── DIVIDER: a little paw print crossing every seam ─────────────────── */
+.divider {
+  position: relative;
+  height: 1px;
+  background: var(--subtle);
+  margin: 0 60px;
+}
+.divider::after {
+  content: '';
+  position: absolute; top: 50%; left: 50%;
+  width: 22px; height: 22px;
+  transform: translate(-50%, -50%);
+  background-color: var(--gold);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='40' r='14'/%3E%3Ccircle cx='12' cy='20' r='8'/%3E%3Ccircle cx='32' cy='12' r='8.5'/%3E%3Ccircle cx='52' cy='20' r='8'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='40' r='14'/%3E%3Ccircle cx='12' cy='20' r='8'/%3E%3Ccircle cx='32' cy='12' r='8.5'/%3E%3Ccircle cx='52' cy='20' r='8'/%3E%3C/svg%3E") center/contain no-repeat;
+  opacity: .75;
+}
 
 /* ── ANIMATIONS ───────────────────────────────────────────────────── */
 @keyframes fadeUp {
@@ -446,6 +528,7 @@ footer a { color: var(--gold); text-decoration: none; }
 <div class="hero">
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
   <div class="hero-inner">
     <div class="hero-eyebrow">
       <span></span>
@@ -463,17 +546,43 @@ footer a { color: var(--gold); text-decoration: none; }
       <a href="Jana_Elhenawy_CV.pdf" class="btn btn-ghost" download>Download CV</a>
       <a href="https://github.com/Jana-elhenawy" target="_blank" class="btn btn-ghost">GitHub ↗</a>
     </div>
+    <div class="scroll-cue"><span class="paw" aria-hidden="true"></span>Scroll</div>
   </div>
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-arrow"></div>
-  </div>
+  <svg class="hero-bird" viewBox="0 0 100 80" aria-hidden="true">
+    <ellipse cx="50" cy="40" rx="10" ry="7" fill="url(#birdGrad)"/>
+    <circle cx="62" cy="35" r="5" fill="url(#birdGrad)"/>
+    <path d="M67 33l7-2-5 5z" fill="var(--rose)"/>
+    <path class="wing left" d="M46 38q-22-6-34-2 14 10 34 6z" fill="url(#birdGrad)"/>
+    <path class="wing right" d="M54 38q22-6 34-2-14 10-34 6z" fill="url(#birdGrad)"/>
+    <path d="M40 44q-6 6-14 6" stroke="url(#birdGrad)" stroke-width="2" fill="none" stroke-linecap="round" opacity=".7"/>
+    <defs>
+      <linearGradient id="birdGrad" x1="0" y1="0" x2="100" y2="80" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#e8829f"/>
+        <stop offset="1" stop-color="#4fb99e"/>
+      </linearGradient>
+    </defs>
+  </svg>
+  <svg class="hero-cat" viewBox="0 0 220 200" aria-hidden="true">
+    <path d="M110 40c-9 0-16 6-19 14-13-4-24 3-27 15-2 8 1 16 7 21-4 6-6 14-6 22 0 32 20 52 45 52s45-20 45-52c0-8-2-16-6-22 6-5 9-13 7-21-3-12-14-19-27-15-3-8-10-14-19-14z" fill="none" stroke="url(#catGrad)" stroke-width="2.2"/>
+    <path d="M78 62l-14-20 22 8M142 62l14-20-22 8" fill="none" stroke="url(#catGrad)" stroke-width="2.2" stroke-linejoin="round"/>
+    <circle class="cat-eye" cx="94" cy="96" r="4.5" fill="#d99a3a"/>
+    <circle class="cat-eye" cx="126" cy="96" r="4.5" fill="#d99a3a"/>
+    <path d="M104 108q6 5 12 0" fill="none" stroke="url(#catGrad)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M45 125q-25 10 -30 40M175 125q25 10 30 40" fill="none" stroke="url(#catGrad)" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+    <defs>
+      <linearGradient id="catGrad" x1="0" y1="0" x2="220" y2="200" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#e8829f"/>
+        <stop offset="1" stop-color="#4fb99e"/>
+      </linearGradient>
+    </defs>
+  </svg>
 </div>
 
-<hr class="divider">
+<div class="divider" role="separator" aria-hidden="true"></div>
 
 <!-- ── ABOUT ────────────────────────────────────────────────────────── -->
 <section class="section" id="about">
+<div class="mini-cat mc-1" aria-hidden="true"></div>
   <div class="section-label">01 / About</div>
   <h2 class="section-title reveal">Who I Am</h2>
   <div class="about-layout reveal">
@@ -506,10 +615,11 @@ footer a { color: var(--gold); text-decoration: none; }
   </div>
 </section>
 
-<hr class="divider">
+<div class="divider" role="separator" aria-hidden="true"></div>
 
 <!-- ── EXPERIENCE ────────────────────────────────────────────────────── -->
 <section class="section" id="experience">
+<div class="mini-cat mc-2" aria-hidden="true"></div>
   <div class="section-label">02 / Experience</div>
   <h2 class="section-title reveal">Where I've Worked</h2>
   <div class="exp-list reveal">
@@ -555,10 +665,11 @@ footer a { color: var(--gold); text-decoration: none; }
   </div>
 </section>
 
-<hr class="divider">
+<div class="divider" role="separator" aria-hidden="true"></div>
 
 <!-- ── ACTIVITIES ────────────────────────────────────────────────────── -->
 <section class="section">
+<div class="mini-cat mc-3" aria-hidden="true"></div>
   <div class="section-label">03 / Activities</div>
   <h2 class="section-title reveal">Competitions & Initiatives</h2>
   <div class="activities-grid reveal">
@@ -599,10 +710,11 @@ footer a { color: var(--gold); text-decoration: none; }
   </div>
 </section>
 
-<hr class="divider">
+<div class="divider" role="separator" aria-hidden="true"></div>
 
 <!-- ── PROJECTS ──────────────────────────────────────────────────────── -->
 <section class="section" id="projects">
+<div class="mini-cat mc-4" aria-hidden="true"></div>
   <div class="section-label">04 / Work</div>
   <h2 class="section-title reveal">Featured Projects</h2>
   <p class="projects-intro reveal">Each project below includes the problem it solved, my role, and the trade-offs I made — not just a feature list.</p>
@@ -780,10 +892,11 @@ footer a { color: var(--gold); text-decoration: none; }
   </div>
 </section>
 
-<hr class="divider">
+<div class="divider" role="separator" aria-hidden="true"></div>
 
 <!-- ── SKILLS ────────────────────────────────────────────────────────── -->
 <section class="section" id="skills">
+<div class="mini-cat mc-5" aria-hidden="true"></div>
   <div class="section-label">05 / Stack</div>
   <h2 class="section-title reveal">Skills &amp; Technologies</h2>
   <div class="skills-layout reveal">
@@ -854,7 +967,7 @@ footer a { color: var(--gold); text-decoration: none; }
   </div>
 </section>
 
-<hr class="divider">
+<div class="divider" role="separator" aria-hidden="true"></div>
 
 <!-- ── CERTIFICATIONS ────────────────────────────────────────────────── -->
 <section class="section">
@@ -887,10 +1000,11 @@ footer a { color: var(--gold); text-decoration: none; }
   </div>
 </section>
 
-<hr class="divider">
+<div class="divider" role="separator" aria-hidden="true"></div>
 
 <!-- ── CONTACT ───────────────────────────────────────────────────────── -->
 <section class="section" id="contact">
+<div class="mini-cat mc-6" aria-hidden="true"></div>
   <div class="section-label">07 / Contact</div>
   <div class="contact-wrapper reveal">
     <p class="contact-tagline">"Let's build something worth building."</p>
