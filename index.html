@@ -130,7 +130,14 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--teal); outline-
 .hero-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--navy); }
 .hero h1 { font-size: clamp(46px, 6vw, 78px); letter-spacing: -0.01em; margin-bottom: 6px; }
 .hero .role { display:block; font-family: var(--ff-body); font-weight: 800; font-size: clamp(18px, 2vw, 23px); color: var(--teal); margin-bottom: 20px; }
-.hero .usp { font-size: 18.5px; color: #3E5771; max-width: 520px; margin-bottom: 30px; }
+.hero .usp { font-size: 18.5px; color: #3E5771; max-width: 520px; margin-bottom: 22px; }
+.usp-points { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px; max-width: 560px; }
+.usp-points li {
+  font-size: 13.5px; color: var(--navy); background: var(--cream);
+  border: 2px solid var(--navy); border-radius: 999px; padding: 7px 16px;
+  box-shadow: 3px 3px 0 var(--navy-10);
+}
+.usp-points strong { font-weight: 800; color: var(--teal); }
 .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 30px; }
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
@@ -396,6 +403,7 @@ footer {
     </button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#work">Projects</a></li>
@@ -416,7 +424,12 @@ footer {
       <div class="hero-badge"><span class="dot"></span>Product Owner Intern @ Medicaspace</div>
       <h1>Jana Elhenawy</h1>
       <span class="role">Full-Stack Developer · Product Owner</span>
-      <p class="usp">I build practical digital products by combining full-stack development with product thinking — from understanding the problem and defining the right solution, to building software people can actually use.</p>
+      <p class="usp">Full-stack developer with a Product Owner's mindset. I turn business requirements into reliable, user-friendly software, from scoping to deployment.</p>
+      <ul class="usp-points">
+        <li><strong>.NET &amp; Django</strong> full-stack delivery</li>
+        <li><strong>Requirements → product</strong> thinking</li>
+        <li><strong>7+ client sites</strong> · 2 competition recognitions</li>
+      </ul>
       <div class="hero-ctas">
         <a href="#work" class="btn btn-primary">View My Work →</a>
         <a href="#contact" class="btn btn-outline">Let's Work Together</a>
@@ -463,11 +476,6 @@ footer {
       </div>
       <div class="about-facts">
         <div class="fact-card">
-          <div class="label">Education</div>
-          <div class="value">B.Sc. Computers &amp; Artificial Intelligence</div>
-          <div class="sub">Cairo University FCAI · 2024–2028</div>
-        </div>
-        <div class="fact-card">
           <div class="label">Right now</div>
           <div class="value">Product Owner Intern, Medicaspace</div>
           <div class="sub">Aug 2026 – Nov 2026</div>
@@ -482,6 +490,29 @@ footer {
           <div class="value">Cairo, Egypt</div>
           <div class="sub">Open to internships &amp; freelance work</div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EDUCATION + CERTIFICATIONS ───────────────────────────────────── -->
+<section class="section tint2" id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Education &amp; Certifications</span>
+      <h2>Background</h2>
+    </div>
+    <div class="edu-cert-grid">
+      <div class="edu-card">
+        <h3>Bachelor of Computers &amp; Artificial Intelligence</h3>
+        <p>Faculty of Computers and AI — Cairo University<br>2024–2028 (Expected)</p>
+      </div>
+      <div class="cert-list">
+        <div class="cert-item"><div><div class="c-name">Full Stack .NET Track</div><div class="c-org">DEPI</div></div><span class="status wip">In Progress</span></div>
+        <div class="cert-item"><div><div class="c-name">Data Science Fundamentals</div><div class="c-org">CIB</div></div><span class="status done">Completed</span></div>
+        <div class="cert-item"><div><div class="c-name">ITIDA Gigs Program</div><div class="c-org">ITIDA</div></div><span class="status done">Completed</span></div>
+        <div class="cert-item"><div><div class="c-name">Git &amp; GitHub — Version Control Fundamentals</div><div class="c-org">Verified Coursework</div></div><span class="status done">Completed</span></div>
+        <div class="cert-item"><div><div class="c-name">AWS Cloud Practitioner</div><div class="c-org">Amazon Web Services</div></div><span class="status wip">In Progress</span></div>
       </div>
     </div>
   </div>
@@ -804,29 +835,6 @@ footer {
         <div class="tags">
           <span class="tag">Requirements Analysis</span><span class="tag">Product Thinking</span><span class="tag">Agile/Scrum</span><span class="tag">Problem Solving</span><span class="tag">UI/UX</span>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── EDUCATION + CERTIFICATIONS ───────────────────────────────────── -->
-<section class="section tint2">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Education &amp; Certifications</span>
-      <h2>Background</h2>
-    </div>
-    <div class="edu-cert-grid">
-      <div class="edu-card">
-        <h3>Bachelor of Computers &amp; Artificial Intelligence</h3>
-        <p>Faculty of Computers and AI — Cairo University<br>2024–2028 (Expected)</p>
-      </div>
-      <div class="cert-list">
-        <div class="cert-item"><div><div class="c-name">Full Stack .NET Track</div><div class="c-org">DEPI</div></div><span class="status wip">In Progress</span></div>
-        <div class="cert-item"><div><div class="c-name">Data Science Fundamentals</div><div class="c-org">CIB</div></div><span class="status done">Completed</span></div>
-        <div class="cert-item"><div><div class="c-name">ITIDA Gigs Program</div><div class="c-org">ITIDA</div></div><span class="status done">Completed</span></div>
-        <div class="cert-item"><div><div class="c-name">Git &amp; GitHub — Version Control Fundamentals</div><div class="c-org">Verified Coursework</div></div><span class="status done">Completed</span></div>
-        <div class="cert-item"><div><div class="c-name">AWS Cloud Practitioner</div><div class="c-org">Amazon Web Services</div></div><span class="status wip">In Progress</span></div>
       </div>
     </div>
   </div>
